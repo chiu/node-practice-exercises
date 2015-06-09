@@ -1,12 +1,17 @@
+
+
+
 var path = require('path')
+var fs = require('fs');
+var pathname = process.argv[2];
+var desired_extension = "."+ process.argv[3];
+
 
 
 for(var count = 0; count < process.argv.length; count++){
 }
 
-var fs = require('fs');
-var pathname = process.argv[2];
-var desired_extension = "."+ process.argv[3];
+
 
 fs.readdir(pathname, function read(err, content) {
   if (err) {
