@@ -12,20 +12,10 @@ fs.readdir(pathname, function read(err, content) {
   if (err) {
     throw err;
   }
-
-
-
   filtered = content.filter(function(single_file){
-    // return true;
-// console.log("path extname:", path.extname(single_file));
-// console.log("desired extension", desired_extension);
-return path.extname(single_file) == desired_extension;
-});
-  // console.log(filtered);
-
+    return path.extname(single_file) == desired_extension;
+  });
   for(var i = 0; i < filtered.length; i ++){
-
     console.log(filtered[i]);
   }
-
 });
