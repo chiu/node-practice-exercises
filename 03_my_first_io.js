@@ -1,21 +1,20 @@
- var fs = require('fs');
+// console.log(process.argv[2]);
+
+var fs = require('fs');
 
 
- fs.readFileSync('/path/to/file')
-
- var newline_count;
- var str = buf.toString();
-
- var split_string = str.split('');
+var buf = fs.readFileSync(process.argv[2]);
+var str = buf.toString();
+// var split_string = str.split('');
 
 
- for(var i = 0;  i < split_string.length; i++){
-
-
-  if (split_string[i] == "n"){
-    newline_count++;
-  }
-
-}
+var newline_count = str.split(/\r\n|\r|\n/).length - 1;
+// var newline_count = 0;
+// for(var i = 0;  i < split_string.length; i++){
+//   uri = /n/;
+//   if ( split_string[i].match(uri) ){
+//     newline_count++;
+//   }
+// }
 
 console.log(newline_count);
