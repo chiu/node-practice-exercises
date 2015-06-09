@@ -16,6 +16,6 @@ fs.readFile(file, function read(err, data) {
 
   var newline_count = content.split(/\r\n|\r|\n/).length - 1;
   console.log(newline_count);
-    
-  });
+  
+});
 
