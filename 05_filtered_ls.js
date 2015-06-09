@@ -22,8 +22,8 @@ fs.readdir(pathname, function read(err, data) {
     throw err;
   }
   content = data;
-  // content = content.toString();
-// console.log(content);
+  content = content.toString();
+console.log(content);
 
 
 
@@ -31,5 +31,6 @@ filtered = content.filter(function(count_file){
   console.log(path.extname(content[count_file]));
   path.extname(content[count_file]) == desired_extension;
 });
-console.log(filtered.toString());
+// console.log(filtered.toString());
+console.log(filtered);
 });
