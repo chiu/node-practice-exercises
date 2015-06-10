@@ -1,7 +1,6 @@
  // caller file; this file calls the module. 
 
- var mymodule = require('./
-  06_make_it_modular_module_one.js');
+ var mymodule = require('./06_make_it_modular_module_one.js');
 
 
  var pathname = process.argv[2];
@@ -11,16 +10,15 @@
  // var callback = mymodule;
 
 
-mymodule(pathname, desired_extension, function read(err, content){
-if (err){
-  throw err;
-}
-
-
-for(var i = 0; i < filtered.length; i ++){
-    console.log(filtered[i]);
+mymodule(pathname, desired_extension, function read(err, result){
+  if (err){
+    // throw err;
+    return err;
   }
 
+  for(var i = 0; i < result.length; i ++){
+    console.log(result[i]);
+  }
 
 });
 
