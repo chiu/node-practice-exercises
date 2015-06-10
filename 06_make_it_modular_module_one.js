@@ -9,12 +9,14 @@ module.exports = function (pathname, desired_extension, flying) {
 
   fs.readdir(pathname, function read(err, content) {
     if (err){
-      return err;
+      return flying(err, null);
     }
+
     var filtered = content.filter( function(single_file) {
       return path.extname(single_file) == desired_extension;
     })
-    flying(null,filtered);
+
+    return flying(null,filtered);
   })
 
   
