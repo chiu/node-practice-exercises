@@ -10,14 +10,20 @@
  // var callback = mymodule;
 
 
-mymodule(pathname, desired_extension, function read(err, result){
+ mymodule(pathname, desired_extension, function read(err, result){
   if (err){
     // throw err;
-    return err;
-  }
+    console.log(err);
+    // return err;
+  } else {
+    // return result;
+    // console.log(JSON.stringify(result, 2));
+    // for(var i = 0; i < result.length; i ++){
+    //   console.log(result[i]);
+    // }
+    console.log(result.join("\n"));
+    // return result;
 
-  for(var i = 0; i < result.length; i ++){
-    console.log(result[i]);
   }
 
 });
